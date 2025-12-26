@@ -1,0 +1,740 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27323,        732]
+NotebookOptionsPosition[     26279,        710]
+NotebookOutlinePosition[     26694,        727]
+CellTagsIndexPosition[     26651,        724]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gE", "=", 
+   RowBox[{
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Import", "[", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+          "\"\<paraset.csv\>\""}], "}"}], "]"}], "]"}], ",", "All", ",", 
+      RowBox[{"{", 
+       RowBox[{"-", "1"}], "}"}]}], "]"}], "*", "100"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.966479197639543*^9, 3.966479239539097*^9}, {
+   3.9664793549928665`*^9, 3.966479376619282*^9}, 
+   3.97571465129405*^9},ExpressionUUID->"5e50114e-7bf3-0643-a0cc-\
+644ed940713e"],
+
+Cell[BoxData[{
+ RowBox[{"aggtime", "=", 
+  RowBox[{"Partition", "[", 
+   RowBox[{
+    RowBox[{"Flatten", "@", 
+     RowBox[{"ToExpression", "@", 
+      RowBox[{"Import", "[", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<sumdata\>\"", 
+          ",", "\"\<aggtime.xlsx\>\""}], "}"}], "]"}], "]"}]}]}], ",", "30"}],
+    "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"aggplot", "=", 
+   RowBox[{"DistributionChart", "[", 
+    RowBox[{"aggtime", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "0.75"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", "10.5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1800"}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ChartStyle", "\[Rule]", 
+      RowBox[{"GrayLevel", "[", "0.75", "]"}]}], ",", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"FrameStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{
+        RowBox[{"Thickness", "[", "0.008", "]"}], ",", "Black", ",", "24"}], 
+       "]"}]}], ",", 
+     RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+     RowBox[{"FrameTicks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"#", ",", "#", ",", 
+              RowBox[{"{", 
+               RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", "1800", ",", "600"}], "]"}]}], ",", "None"}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"#", ",", "#", ",", 
+              RowBox[{"{", 
+               RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", "10", ",", "2"}], "]"}]}], ",", "None"}], 
+         "}"}]}], "}"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<plot\>\"", ",", 
+       "\"\<aggplot.eps\>\""}], "}"}], "]"}], ",", "aggplot"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.966384264635432*^9, 3.966384396144997*^9}, {
+   3.9663844772961082`*^9, 3.966384498877842*^9}, {3.966384756643446*^9, 
+   3.966384766982067*^9}, {3.966392985204878*^9, 3.966392988103168*^9}, 
+   3.9663932672944*^9, {3.966393907356375*^9, 3.9663939666256695`*^9}, {
+   3.966394429922528*^9, 3.966394432017798*^9}, {3.966394515966831*^9, 
+   3.966394535008751*^9}, 3.966472236296205*^9, 3.966478841221154*^9, {
+   3.972962953892883*^9, 3.97296296080389*^9}, {3.9742546818583775`*^9, 
+   3.9742546825127544`*^9}, 
+   3.975714661966959*^9},ExpressionUUID->"f956146d-5b15-cf49-a8ad-\
+c879ffacb4fc"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"paraset2", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<paraset2.csv\>\""}],
+       "}"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraset2", "=", 
+   RowBox[{"ToExpression", "@", 
+    RowBox[{"Transpose", "@", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Rescale", "@", 
+        RowBox[{"Flatten", "@", 
+         RowBox[{"Take", "[", 
+          RowBox[{"paraset2", ",", "All", ",", 
+           RowBox[{"{", "i", "}"}]}], "]"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "3"}], "}"}]}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"alldata", "=", 
+   RowBox[{"Transpose", "@", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", "paraset2"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Rescale", "@", 
+        RowBox[{"aggtime", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"alldata", ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<AdjustedRSquared\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<ParameterPValues\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fitall", "[", "\"\<VarianceInflationFactors\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"ColorData", "[", "\"\<StarryNightColors\>\"", "]"}], "[", 
+    RowBox[{"alldata", "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"First", "@", 
+        RowBox[{"First", "@", 
+         RowBox[{"Position", "[", 
+          RowBox[{"paraset2", ",", 
+           RowBox[{"First", "@", 
+            RowBox[{"Nearest", "[", 
+             RowBox[{"paraset2", ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], 
+          "]"}]}]}], ",", "4"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"agg3Dplot", "=", 
+  RowBox[{"ListPointPlot3D", "[", 
+   RowBox[{"paraset2", ",", 
+    RowBox[{"BoxRatios", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
+    RowBox[{"ColorFunction", "\[Rule]", "f"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"PointSize", "[", "0.015", "]"}], "]"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "True"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+    RowBox[{"BoxStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.005", "]"}], ",", "30"}], "]"}]}], ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"Black", ",", "50"}], "]"}]}], ",", 
+    RowBox[{"ViewPoint", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "Pi"}], ",", 
+       RowBox[{
+        RowBox[{"-", "Pi"}], "/", "2"}], ",", "2"}], "}"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<plot\>\"", ",", 
+       "\"\<agg3Dplot1.eps\>\""}], "}"}], "]"}], ",", "agg3Dplot"}], "]"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.9663847692758045`*^9, 3.966384771218704*^9}, {
+   3.96638480131972*^9, 3.9663849232319756`*^9}, {3.966384971264824*^9, 
+   3.966384972524723*^9}, {3.966385004679695*^9, 3.9663850055164013`*^9}, 
+   3.966386628284048*^9, {3.9663932022834206`*^9, 3.966393230403137*^9}, {
+   3.966393271437104*^9, 3.96639327280992*^9}, {3.966393308252075*^9, 
+   3.966393309130413*^9}, {3.9663944410282955`*^9, 3.966394464953167*^9}, {
+   3.966394546994*^9, 3.9663945688576593`*^9}, {3.966464202781992*^9, 
+   3.9664642982481136`*^9}, {3.966468007009533*^9, 3.966468015216505*^9}, {
+   3.966468068689605*^9, 3.966468079931095*^9}, {3.966468561322628*^9, 
+   3.96646856373504*^9}, {3.966472232152622*^9, 3.966472233447628*^9}, {
+   3.966472265902609*^9, 3.96647227761383*^9}, {3.966480423110428*^9, 
+   3.966480427312298*^9}, {3.9664804585819016`*^9, 3.9664804600643864`*^9}, {
+   3.966480611051111*^9, 3.9664806157750664`*^9}, {3.966480740919304*^9, 
+   3.9664807653072186`*^9}, 3.9664808788620644`*^9},
+ CellLabel->
+  "In[172]:=",ExpressionUUID->"f925f293-108f-6b4e-bbf3-bf4a3ec43dea"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"stoptime", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"stop", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"ToExpression", "@", 
+        RowBox[{"Import", "[", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<sumdata\>\"", 
+            ",", 
+            RowBox[{"\"\<stoptime-\>\"", "<>", 
+             RowBox[{"ToString", "@", "i"}], "<>", "\"\<.xlsx\>\""}]}], "}"}],
+           "]"}], "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"stoptime", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"stoptime", ",", 
+        RowBox[{"{", "stop", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "10"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", "stoptime"}], "Input",
+ CellChangeTimes->{{3.966412243253271*^9, 3.9664123154524384`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"50a2db3f-e677-8c4c-9c45-c05a2722b711"],
+
+Cell[BoxData[{
+ RowBox[{"stopplot", "=", 
+  RowBox[{"DistributionChart", "[", 
+   RowBox[{"stoptime", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "0.75"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.5", ",", "10.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1200"}], "}"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ChartStyle", "\[Rule]", 
+     RowBox[{"ColorData", "[", "95", "]"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.008", "]"}], ",", "Black", ",", "24"}], 
+      "]"}]}], ",", 
+    RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"#", ",", "#", ",", 
+             RowBox[{"{", 
+              RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "1200", ",", "400"}], "]"}]}], ",", "None"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"#", ",", "#", ",", 
+             RowBox[{"{", 
+              RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "10", ",", "2"}], "]"}]}], ",", "None"}], 
+        "}"}]}], "}"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<plot\>\"", ",", 
+       "\"\<stopplot.eps\>\""}], "}"}], "]"}], ",", "stopplot"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.966395425246519*^9, 3.966395466542801*^9}, {
+  3.966395507539469*^9, 3.966395592664757*^9}, {3.9664123285053463`*^9, 
+  3.9664123461647224`*^9}, {3.966412434273834*^9, 3.966412442905527*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"be4a7c47-5e07-be40-a534-f771397c7206"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"paraset2", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<paraset2.csv\>\""}],
+       "}"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraset2", "=", 
+   RowBox[{"ToExpression", "@", 
+    RowBox[{"Transpose", "@", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Rescale", "@", 
+        RowBox[{"Flatten", "@", 
+         RowBox[{"Take", "[", 
+          RowBox[{"paraset2", ",", "All", ",", 
+           RowBox[{"{", "i", "}"}]}], "]"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "3"}], "}"}]}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"alldata", "=", 
+   RowBox[{"Transpose", "@", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", "paraset2"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Rescale", "@", 
+        RowBox[{"stoptime", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"alldata", ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<AdjustedRSquared\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<ParameterPValues\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fitall", "[", "\"\<VarianceInflationFactors\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"ColorData", "[", "\"\<StarryNightColors\>\"", "]"}], "[", 
+   RowBox[{"alldata", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"First", "@", 
+       RowBox[{"First", "@", 
+        RowBox[{"Position", "[", 
+         RowBox[{"paraset2", ",", 
+          RowBox[{"First", "@", 
+           RowBox[{"Nearest", "[", 
+            RowBox[{"paraset2", ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], 
+         "]"}]}]}], ",", "4"}], "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"agg3Dplot", "=", 
+   RowBox[{"ListPointPlot3D", "[", 
+    RowBox[{"paraset2", ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Mp\>\"", ",", "\"\<Ms\>\"", ",", "\"\<Rp\>\""}], "}"}]}], 
+     ",", 
+     RowBox[{"BoxRatios", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
+     RowBox[{"ColorFunction", "\[Rule]", "f"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"PointSize", "[", "0.015", "]"}], "]"}]}], ",", 
+     RowBox[{"Boxed", "\[Rule]", "True"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+     RowBox[{"BoxStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{
+        RowBox[{"Thickness", "[", "0.005", "]"}], ",", "30"}], "]"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Black", ",", "30"}], "]"}]}], ",", 
+     RowBox[{"ViewPoint", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "Pi"}], ",", 
+        RowBox[{
+         RowBox[{"-", "Pi"}], "/", "2"}], ",", "2"}], "}"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.966412468410969*^9, 3.966412489124653*^9}, 
+   3.966412522450468*^9, 3.966459995053566*^9, {3.9664681483866386`*^9, 
+   3.966468149418789*^9}},
+ CellLabel->
+  "In[412]:=",ExpressionUUID->"f63c3e0b-9671-2d4a-91c7-54efc222e1ee"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"time", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "10000", ",", "10"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"st", "=", "0.05"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"motilefreq", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stoptime", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"freq", "=", 
+      RowBox[{"First", "@", 
+       RowBox[{"ToExpression", "@", 
+        RowBox[{"Import", "[", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<sumdata\>\"", 
+            ",", 
+            RowBox[{"\"\<motilefreq-\>\"", "<>", 
+             RowBox[{"ToString", "@", "i"}], "<>", "\"\<.xlsx\>\""}]}], "}"}],
+           "]"}], "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"freq", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"DeleteCases", "[", 
+         RowBox[{
+          RowBox[{"freq", "[", 
+           RowBox[{"[", "j", "]"}], "]"}], ",", "Null"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", 
+          RowBox[{"Length", "@", "freq"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tStop", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Select", "[", 
+         RowBox[{
+          RowBox[{"freq", "[", 
+           RowBox[{"[", "j", "]"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"#", "<", "st"}], "&"}], ",", "1"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", 
+          RowBox[{"Length", "@", "freq"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"mpos", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"tStop", "[", 
+            RowBox[{"[", "j", "]"}], "]"}], "==", 
+           RowBox[{"{", "}"}]}], ",", 
+          RowBox[{"Length", "@", 
+           RowBox[{"freq", "[", 
+            RowBox[{"[", "j", "]"}], "]"}]}], ",", 
+          RowBox[{"First", "@", 
+           RowBox[{"First", "@", 
+            RowBox[{"Position", "[", 
+             RowBox[{
+              RowBox[{"freq", "[", 
+               RowBox[{"[", "j", "]"}], "]"}], ",", 
+              RowBox[{"First", "@", 
+               RowBox[{"tStop", "[", 
+                RowBox[{"[", "j", "]"}], "]"}]}]}], "]"}]}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "1", ",", 
+          RowBox[{"Length", "@", "freq"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"motilefreq", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"motilefreq", ",", 
+        RowBox[{"{", "freq", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"stoptime", "=", 
+      RowBox[{"Join", "[", 
+       RowBox[{"stoptime", ",", 
+        RowBox[{"{", 
+         RowBox[{"time", "[", 
+          RowBox[{"[", "mpos", "]"}], "]"}], "}"}]}], "]"}]}], ";"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "10"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"stopplot", "=", 
+  RowBox[{"DistributionChart", "[", 
+   RowBox[{"stoptime", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "0.75"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.5", ",", "10.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1800"}], "}"}]}], "}"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ChartStyle", "\[Rule]", 
+     RowBox[{"GrayLevel", "[", "0.75", "]"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.008", "]"}], ",", "Black", ",", "24"}], 
+      "]"}]}], ",", 
+    RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"#", ",", "#", ",", 
+             RowBox[{"{", 
+              RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "1800", ",", "600"}], "]"}]}], ",", "None"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"#", ",", "#", ",", 
+             RowBox[{"{", 
+              RowBox[{"0.02", ",", "0"}], "}"}]}], "}"}], "&"}], "/@", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "10", ",", "2"}], "]"}]}], ",", "None"}], 
+        "}"}]}], "}"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<plot\>\"", ",", 
+       "\"\<stopplot.eps\>\""}], "}"}], "]"}], ",", "stopplot"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.966460253000709*^9, 3.96646031370545*^9}, {
+   3.966460408622055*^9, 3.966460428001087*^9}, {3.966460911977167*^9, 
+   3.966460912090788*^9}, {3.966460948485409*^9, 3.9664610479591007`*^9}, {
+   3.96646291145071*^9, 3.966463039466989*^9}, {3.9664631417907143`*^9, 
+   3.9664633104805317`*^9}, {3.96646334467902*^9, 3.966463355257635*^9}, 
+   3.966463458645668*^9, 3.966463499123131*^9, 3.966463822009603*^9, 
+   3.966463922375707*^9, {3.966463952584949*^9, 3.966463952902653*^9}, {
+   3.966468691162718*^9, 3.966468716950891*^9}, {3.96647997004586*^9, 
+   3.966479974708004*^9}, {3.966482739989401*^9, 3.966482754136465*^9}, 
+   3.974254703626625*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"62077e62-1c6c-ad47-9591-c647f04cdaf5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"alldata", "=", 
+   RowBox[{"Transpose", "@", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", "paraset2"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Rescale", "@", 
+        RowBox[{"stoptime", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"alldata1", "=", 
+   RowBox[{"Transpose", "@", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", "paraset2"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Rescale", "[", 
+        RowBox[{
+         RowBox[{"stoptime", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"5", ",", "21.167"}], "}"}], "*", "60"}]}], "]"}], "}"}]}],
+      "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"alldata", ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<AdjustedRSquared\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"fitall", "[", "\"\<ParameterPValues\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fitall", "[", "\"\<VarianceInflationFactors\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"ColorData", "[", "\"\<StarryNightColors\>\"", "]"}], "[", 
+   RowBox[{"alldata1", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"First", "@", 
+       RowBox[{"First", "@", 
+        RowBox[{"Position", "[", 
+         RowBox[{"paraset2", ",", 
+          RowBox[{"First", "@", 
+           RowBox[{"Nearest", "[", 
+            RowBox[{"paraset2", ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]}], 
+         "]"}]}]}], ",", "4"}], "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"agg3Dplot", "=", 
+  RowBox[{"ListPointPlot3D", "[", 
+   RowBox[{"paraset2", ",", 
+    RowBox[{"BoxRatios", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
+    RowBox[{"ColorFunction", "\[Rule]", "f"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"PointSize", "[", "0.015", "]"}], "]"}]}], ",", 
+    RowBox[{"Boxed", "\[Rule]", "True"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+    RowBox[{"BoxStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"Thickness", "[", "0.005", "]"}], ",", "30"}], "]"}]}], ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", 
+      RowBox[{"Black", ",", "50"}], "]"}]}], ",", 
+    RowBox[{"ViewPoint", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "Pi"}], ",", 
+       RowBox[{
+        RowBox[{"-", "Pi"}], "/", "2"}], ",", "2"}], "}"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<plot\>\"", ",", 
+       "\"\<stop3Dplot1.eps\>\""}], "}"}], "]"}], ",", "agg3Dplot"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9664604567495575`*^9, 3.966460492043524*^9}, {
+   3.9664633273233547`*^9, 3.966463328751812*^9}, 3.966463988168993*^9, 
+   3.966468199716514*^9, {3.966468237927307*^9, 3.966468238602455*^9}, {
+   3.966468537991457*^9, 3.9664685421111298`*^9}, {3.9664686767033863`*^9, 
+   3.966468677128736*^9}, {3.9664687329762726`*^9, 3.966468754680395*^9}, {
+   3.966481398761791*^9, 3.966481408915903*^9}, {3.9664820294073105`*^9, 
+   3.9664822369803505`*^9}, {3.966482286931061*^9, 3.9664822917905197`*^9}, {
+   3.9664824517300625`*^9, 3.966482485374201*^9}},
+ CellLabel->
+  "In[349]:=",ExpressionUUID->"fe3c33e8-cb9c-614d-b0ed-8fc435edab17"]
+},
+WindowSize->{1428, 729.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (2023\:5e7412\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0e5fdc57-1616-9249-ad97-88b2a7aed180"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 631, 17, 28, "Input",ExpressionUUID->"5e50114e-7bf3-0643-a0cc-644ed940713e"],
+Cell[1192, 39, 3074, 79, 105, "Input",ExpressionUUID->"f956146d-5b15-cf49-a8ad-c879ffacb4fc"],
+Cell[4269, 120, 4759, 120, 238, "Input",ExpressionUUID->"f925f293-108f-6b4e-bbf3-bf4a3ec43dea"],
+Cell[9031, 242, 1138, 29, 124, "Input",ExpressionUUID->"50a2db3f-e677-8c4c-9c45-c05a2722b711"],
+Cell[10172, 273, 2258, 60, 86, "Input",ExpressionUUID->"be4a7c47-5e07-be40-a534-f771397c7206"],
+Cell[12433, 335, 3788, 103, 238, "Input",ExpressionUUID->"f63c3e0b-9671-2d4a-91c7-54efc222e1ee"],
+Cell[16224, 440, 6040, 161, 314, "Input",ExpressionUUID->"62077e62-1c6c-ad47-9591-c647f04cdaf5"],
+Cell[22267, 603, 4008, 105, 200, "Input",ExpressionUUID->"fe3c33e8-cb9c-614d-b0ed-8fc435edab17"]
+}
+]
+*)
+

@@ -1,0 +1,174 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6028,        166]
+NotebookOptionsPosition[      4964,        142]
+NotebookOutlinePosition[      5389,        159]
+CellTagsIndexPosition[      5346,        156]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Parameters.m"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "Mainfunction.m"}]}], "Input",
+ CellChangeTimes->{{3.944256026496525*^9, 3.944256029743381*^9}, 
+   3.945223884955204*^9, 3.9452260095417423`*^9, {3.9457398452158136`*^9, 
+   3.94573984628196*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"95053e65-90ac-1343-8189-a8ec8415b7c7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "one", " ", "time", " ", "simulation", " ", "for", " ", "random", " ", 
+    "motility"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Mainloopmotile", "[", "]"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.944256049641165*^9, 3.944256057177897*^9}, {
+  3.975709804102453*^9, 
+  3.9757098226075935`*^9}},ExpressionUUID->"438eaee5-08a4-6a40-a2fb-\
+cb01f07e4653"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "one", " ", "time", " ", "simulation", " ", "for", " ", "aggregative", " ",
+     "motility"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"MainloopQS", "[", "]"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.9451224611075*^9, 3.945122461378084*^9}, 
+   3.945227306765488*^9, {3.9757098283055725`*^9, 
+   3.9757098369201546`*^9}},ExpressionUUID->"c1b544c4-0d94-274a-8e45-\
+0ec457db9219"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "one", " ", "time", " ", "simulation", " ", "for", " ", "nonmotility"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Mainloopsessile", "[", "]"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.945124636404293*^9, 3.945124674221152*^9}, {
+  3.9451367755586014`*^9, 3.945136780330092*^9}, {3.975709841794626*^9, 
+  3.9757098456721783`*^9}},ExpressionUUID->"244cb839-f45d-c54e-bbe7-\
+13ba63ce0c69"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"generate", " ", "random", " ", "parameter", " ", "sets"}], "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"setnum", "=", "300"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Paragenerator", "[", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9757097734107685`*^9, 
+  3.975709787381403*^9}},ExpressionUUID->"e0dbe366-4188-b743-a3a9-\
+0b77ba47e1bc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"generate", " ", "random", " ", "distributions"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"initialDensity", "=", "0.005"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"disnum", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Inidis", "[", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.975709790632757*^9, 
+  3.9757097964179363`*^9}},ExpressionUUID->"1da02a66-914d-af40-89ad-\
+34fdc03cc775"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "run", " ", "8", " ", "distributions", " ", "X", " ", "300", " ", 
+    "parameter", " ", "sets", " ", "for", " ", "the", " ", "three", " ", 
+    "scenarios"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"initialDensity", "=", "0.01"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"disno1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"disno2", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paranum1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paranum2", "=", "300"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Paraloopsessile", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Paraloopmotile", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ParaloopQS", "[", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.945479185253122*^9, 3.945479187156683*^9}, {
+   3.945481178447253*^9, 3.9454812148636684`*^9}, {3.945481411560911*^9, 
+   3.945481415800121*^9}, 3.945483169553911*^9, 3.945483236853725*^9, {
+   3.9457244306649494`*^9, 3.945724439083139*^9}, 3.945740313897644*^9, {
+   3.975709857983694*^9, 
+   3.975709920368746*^9}},ExpressionUUID->"385323e5-7bfc-e745-bb24-\
+efe00ff11859"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.945484130757519*^9, 3.9454846370153236`*^9, 
+  3.9454854325932436`*^9, 3.945486272731327*^9, 3.945740352377823*^9, 
+  3.945740902065876*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"72b00269-94a0-3d42-9c1c-b00d9d630fb7"]
+}, Open  ]]
+},
+WindowSize->{581.25, 648.75},
+WindowMargins->{{Automatic, 237.75}, {Automatic, 13.5}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (2023\:5e7412\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"167a9904-fa1d-e24d-9ed2-3ed9b183a17a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 489, 10, 67, "Input",ExpressionUUID->"95053e65-90ac-1343-8189-a8ec8415b7c7"],
+Cell[1050, 32, 425, 11, 48, "Input",ExpressionUUID->"438eaee5-08a4-6a40-a2fb-cb01f07e4653"],
+Cell[1478, 45, 450, 11, 48, "Input",ExpressionUUID->"c1b544c4-0d94-274a-8e45-0ec457db9219"],
+Cell[1931, 58, 461, 11, 48, "Input",ExpressionUUID->"244cb839-f45d-c54e-bbe7-13ba63ce0c69"],
+Cell[2395, 71, 438, 12, 67, "Input",ExpressionUUID->"e0dbe366-4188-b743-a3a9-0b77ba47e1bc"],
+Cell[2836, 85, 509, 14, 86, "Input",ExpressionUUID->"1da02a66-914d-af40-89ad-34fdc03cc775"],
+Cell[CellGroupData[{
+Cell[3370, 103, 1299, 30, 200, "Input",ExpressionUUID->"385323e5-7bfc-e745-bb24-efe00ff11859"],
+Cell[4672, 135, 276, 4, 32, "Output",ExpressionUUID->"72b00269-94a0-3d42-9c1c-b00d9d630fb7"]
+}, Open  ]]
+}
+]
+*)
+
